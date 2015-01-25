@@ -1,0 +1,27 @@
+irb(main):001:0> ActiveRecord::Base.logger = nil
+=> nil
+irb(main):002:0> Brewery.create name:"BrewDog", year:2007
+=> #<Brewery id: 11, name: "BrewDog", year: "2007", created_at: "2015-01-25 17:57:18", updated_at: "2015-01-25 17:57:18">
+irb(main):003:0> bre = _
+=> #<Brewery id: 11, name: "BrewDog", year: "2007", created_at: "2015-01-25 17:57:18", updated_at: "2015-01-25 17:57:18">
+irb(main):004:0> bre.beers.create name:"Punk IPA", style:"IPA"
+=> #<Beer id: 24, name: "Punk IPA", style: "IPA", brewery_id: 11, created_at: "2015-01-25 17:57:46", updated_at: "2015-01-25 17:57:46">
+irb(main):005:0> ipa = _
+=> #<Beer id: 24, name: "Punk IPA", style: "IPA", brewery_id: 11, created_at: "2015-01-25 17:57:46", updated_at: "2015-01-25 17:57:46">
+irb(main):006:0> bre.beers.create name:"Nanny State", style:"lowalcohol"
+=> #<Beer id: 25, name: "Nanny State", style: "lowalcohol", brewery_id: 11, created_at: "2015-01-25 17:58:09", updated_at: "2015-01-25 17:58:09">
+irb(main):007:0> nanny = _
+=> #<Beer id: 25, name: "Nanny State", style: "lowalcohol", brewery_id: 11, created_at: "2015-01-25 17:58:09", updated_at: "2015-01-25 17:58:09">
+irb(main):008:0> ipa.ratings.create score:15
+=> #<Rating id: 3, score: 15, beer_id: 24, created_at: "2015-01-25 17:58:46", updated_at: "2015-01-25 17:58:46">
+irb(main):009:0> ipa.ratings.create score:18
+=> #<Rating id: 4, score: 18, beer_id: 24, created_at: "2015-01-25 17:58:48", updated_at: "2015-01-25 17:58:48">
+irb(main):010:0> ipa.ratings.create score:11
+=> #<Rating id: 5, score: 11, beer_id: 24, created_at: "2015-01-25 17:59:00", updated_at: "2015-01-25 17:59:00">
+irb(main):011:0> nanny.ratings.create score:7
+=> #<Rating id: 6, score: 7, beer_id: 25, created_at: "2015-01-25 17:59:14", updated_at: "2015-01-25 17:59:14">
+irb(main):012:0> nanny.ratings.create score:8
+=> #<Rating id: 7, score: 8, beer_id: 25, created_at: "2015-01-25 17:59:16", updated_at: "2015-01-25 17:59:16">
+irb(main):013:0> nanny.ratings.create score:12
+=> #<Rating id: 8, score: 12, beer_id: 25, created_at: "2015-01-25 17:59:19", updated_at: "2015-01-25 17:59:19">
+irb(main):014:0> 
